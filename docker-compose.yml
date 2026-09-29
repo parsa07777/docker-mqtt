@@ -1,0 +1,17 @@
+services:
+  rabbitmq:
+    image: rabbitmq:4-management
+
+    ports:
+      - "1883:1883"
+      - "15672:15672"
+
+    volumes:
+      - rabbitmq_data:/var/lib/rabbitmq
+
+    command: >
+      sh -c "rabbitmq-plugins enable --offline rabbitmq_mqtt &&
+             rabbitmq-server"
+
+volumes:
+  rabbitmq_data:
