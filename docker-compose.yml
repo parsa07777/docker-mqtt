@@ -9,9 +9,6 @@ services:
     volumes:
       - rabbitmq_data:/var/lib/rabbitmq
 
-    command: >
-      sh -c "rabbitmq-plugins enable --offline rabbitmq_mqtt &&
-             rabbitmq-server"
 
 volumes:
   rabbitmq_data:
